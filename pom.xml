@@ -14,7 +14,15 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<version.spring>4.3.10.RELEASE</version.spring>
+		<version.jetty.server>9.4.5.v20170502</version.jetty.server>
+		<version.jetty.webapp>9.4.5.v20170502</version.jetty.webapp>
+		<version.jetty.jmx>9.4.5.v20170502</version.jetty.jmx>
+		<version.metrics.jetty9>3.0.2</version.metrics.jetty9>
+		<version.metrics.jetty9>3.0.2</version.metrics.jetty9>
+		<version.metrics.healthchecks>3.0.2</version.metrics.healthchecks>
+		<version.metrics.servlets>3.0.2</version.metrics.servlets>
 		<version.maven.plugin.clean>2.5</version.maven.plugin.clean>
+		<version.guava>r05</version.guava>
 		<version.commons.lang3>3.4</version.commons.lang3>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -31,6 +39,46 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>${version.commons.lang3}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>${version.jetty.server}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jmx</artifactId>
+			<version>${version.jetty.jmx}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>${version.jetty.webapp}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-jetty9</artifactId>
+			<version>${version.metrics.jetty9}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-healthchecks</artifactId>
+			<version>${version.metrics.healthchecks}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-servlets</artifactId>
+			<version>${version.metrics.servlets}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${version.guava}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${version.guava}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -39,6 +87,14 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>${version.maven.plugin.clean}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
